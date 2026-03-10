@@ -1,0 +1,27 @@
+Data Cleaning Report
+====================
+
+Employee Information
+Missing cells before cleaning: 164
+Missing cells after cleaning: 0
+Invalid salary rows before cleaning: 12
+Invalid salary rows after cleaning: 0
+
+Methods applied:
+- KNN Imputer for Salary and Performance Score
+- Most Frequent Imputer for Name, Department, and Gender
+- Median date imputation for Date of Birth after parsing mixed formats
+- Forward-fill and backward-fill for Date of Joining after parsing mixed formats
+- Text standardization with trimming and title casing
+
+Sales Data
+Missing cells before cleaning: 57
+Missing cells after cleaning: 0
+Negative quantity rows before cleaning: 14
+Negative quantity rows after cleaning: 0
+
+Methods applied:
+- KNN Imputer for Quantity Sold and Sale Amount
+- Most Frequent Imputer for Product Category and Payment Method
+- Forward-fill and backward-fill for Sale Date after parsing mixed formats
+- Category and payment method standardization

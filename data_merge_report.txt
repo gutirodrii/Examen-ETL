@@ -1,0 +1,13 @@
+Data Merge Report
+=================
+
+Merge approach:
+- Sales data did not contain an Employee ID column, so a deterministic employee assignment was added before merging.
+- A many-to-one left join was applied from sales to employee data on Employee ID.
+
+Employee rows available: 100
+Sales rows available: 120
+Merged rows produced: 120
+Rows matched to employee records: 120
+Unique employees represented in sales: 70
+Missing values remaining in merged dataset: 0

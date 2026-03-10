@@ -1,0 +1,253 @@
+record_key,change_type,column_name,old_value,new_value
+TXN5000,modified,Quantity Sold,5.0,5
+TXN5000,modified,Sale Date,2023/01/01,2023-01-01
+TXN5001,modified,Quantity Sold,1.0,1
+TXN5002,modified,Product Category,<MISSING>,Electronics
+TXN5002,modified,Quantity Sold,2.0,2
+TXN5003,modified,Quantity Sold,6.0,6
+TXN5003,modified,Payment Method,cash,Cash
+TXN5004,modified,Product Category,<MISSING>,Electronics
+TXN5004,modified,Quantity Sold,11.0,11
+TXN5005,modified,Quantity Sold,1.0,1
+TXN5006,modified,Quantity Sold,4.0,4
+TXN5006,modified,Payment Method,cash,Cash
+TXN5006,modified,Sale Date,2023/02/09,2023-02-09
+TXN5007,modified,Product Category,<MISSING>,Electronics
+TXN5007,modified,Quantity Sold,2.0,2
+TXN5008,modified,Quantity Sold,12.0,12
+TXN5008,modified,Payment Method,cash,Cash
+TXN5009,modified,Quantity Sold,12.0,12
+TXN5009,modified,Sale Amount,<MISSING>,1108.22
+TXN5010,modified,Quantity Sold,3.0,3
+TXN5010,modified,Sale Date,08 Mar 2023,2023-03-08
+TXN5011,modified,Product Category,<MISSING>,Electronics
+TXN5011,modified,Quantity Sold,-2.0,5
+TXN5011,modified,Sale Date,14 Mar 2023,2023-03-14
+TXN5012,modified,Quantity Sold,-1.0,5
+TXN5013,modified,Quantity Sold,4.0,4
+TXN5013,modified,Sale Date,28 Mar 2023,2023-03-28
+TXN5014,modified,Product Category,<MISSING>,Electronics
+TXN5014,modified,Quantity Sold,3.0,3
+TXN5014,modified,Payment Method,credit card,Credit Card
+TXN5015,modified,Product Category,<MISSING>,Electronics
+TXN5015,modified,Quantity Sold,12.0,12
+TXN5015,modified,Payment Method,<MISSING>,Credit Card
+TXN5015,modified,Sale Date,2023/04/10,2023-04-10
+TXN5016,modified,Quantity Sold,12.0,12
+TXN5016,modified,Payment Method,cash,Cash
+TXN5016,modified,Sale Date,04-17-2023,2023-04-17
+TXN5017,modified,Quantity Sold,10.0,10
+TXN5017,modified,Sale Amount,<MISSING>,1086.81
+TXN5017,modified,Payment Method,credit card,Credit Card
+TXN5018,modified,Quantity Sold,2.0,2
+TXN5018,modified,Sale Date,30 Apr 2023,2023-04-30
+TXN5019,modified,Quantity Sold,3.0,3
+TXN5019,modified,Payment Method,<MISSING>,Credit Card
+TXN5020,modified,Product Category,<MISSING>,Electronics
+TXN5020,modified,Quantity Sold,12.0,12
+TXN5020,modified,Payment Method,cash,Cash
+TXN5021,modified,Product Category,<MISSING>,Electronics
+TXN5021,modified,Quantity Sold,3.0,3
+TXN5021,modified,Sale Date,2023/05/20,2023-05-20
+TXN5022,modified,Quantity Sold,-5.0,10
+TXN5023,modified,Quantity Sold,6.0,6
+TXN5023,modified,Payment Method,<MISSING>,Credit Card
+TXN5023,modified,Sale Date,06-02-2023,2023-06-02
+TXN5024,modified,Quantity Sold,5.0,5
+TXN5024,modified,Payment Method,<MISSING>,Credit Card
+TXN5025,modified,Quantity Sold,5.0,5
+TXN5026,modified,Quantity Sold,1.0,1
+TXN5026,modified,Payment Method,cash,Cash
+TXN5026,modified,Sale Date,22 Jun 2023,2023-06-22
+TXN5027,modified,Product Category,<MISSING>,Electronics
+TXN5027,modified,Quantity Sold,6.0,6
+TXN5028,modified,Product Category,<MISSING>,Electronics
+TXN5028,modified,Quantity Sold,13.0,13
+TXN5029,modified,Quantity Sold,9.0,9
+TXN5029,modified,Payment Method,credit card,Credit Card
+TXN5030,modified,Quantity Sold,-10.0,6
+TXN5030,modified,Sale Date,18/07/2023,2023-07-18
+TXN5031,modified,Quantity Sold,1.0,1
+TXN5031,modified,Payment Method,<MISSING>,Credit Card
+TXN5032,modified,Quantity Sold,11.0,11
+TXN5032,modified,Payment Method,credit card,Credit Card
+TXN5033,modified,Quantity Sold,13.0,13
+TXN5033,modified,Sale Date,08-07-2023,2023-08-07
+TXN5034,modified,Quantity Sold,1.0,1
+TXN5035,modified,Quantity Sold,10.0,10
+TXN5036,modified,Quantity Sold,3.0,3
+TXN5037,modified,Quantity Sold,1.0,1
+TXN5037,modified,Payment Method,credit card,Credit Card
+TXN5038,modified,Quantity Sold,-10.0,8
+TXN5039,modified,Quantity Sold,-10.0,9
+TXN5039,modified,Payment Method,credit card,Credit Card
+TXN5040,modified,Quantity Sold,9.0,9
+TXN5040,modified,Sale Amount,<MISSING>,958.94
+TXN5041,modified,Quantity Sold,13.0,13
+TXN5041,modified,Payment Method,<MISSING>,Credit Card
+TXN5042,modified,Quantity Sold,10.0,10
+TXN5042,modified,Payment Method,credit card,Credit Card
+TXN5042,modified,Sale Date,06 Oct 2023,2023-10-06
+TXN5043,modified,Product Category,<MISSING>,Electronics
+TXN5043,modified,Quantity Sold,8.0,8
+TXN5043,modified,Sale Amount,<MISSING>,1254.85
+TXN5043,modified,Payment Method,cash,Cash
+TXN5044,modified,Quantity Sold,-5.0,7
+TXN5044,modified,Sale Amount,<MISSING>,1282.71
+TXN5044,modified,Payment Method,cash,Cash
+TXN5045,modified,Quantity Sold,5.0,5
+TXN5045,modified,Payment Method,credit card,Credit Card
+TXN5045,modified,Sale Date,10-26-2023,2023-10-26
+TXN5046,modified,Quantity Sold,9.0,9
+TXN5046,modified,Sale Date,01 Nov 2023,2023-11-01
+TXN5047,modified,Quantity Sold,6.0,6
+TXN5047,modified,Payment Method,cash,Cash
+TXN5048,modified,Quantity Sold,1.0,1
+TXN5048,modified,Payment Method,<MISSING>,Credit Card
+TXN5049,modified,Product Category,<MISSING>,Electronics
+TXN5049,modified,Quantity Sold,4.0,4
+TXN5049,modified,Sale Date,2023/11/21,2023-11-21
+TXN5050,modified,Product Category,<MISSING>,Electronics
+TXN5050,modified,Quantity Sold,3.0,3
+TXN5050,modified,Sale Date,28/11/2023,2023-11-28
+TXN5051,modified,Product Category,<MISSING>,Electronics
+TXN5051,modified,Quantity Sold,10.0,10
+TXN5051,modified,Sale Date,2023/12/05,2023-12-05
+TXN5052,modified,Quantity Sold,12.0,12
+TXN5053,modified,Quantity Sold,10.0,10
+TXN5053,modified,Sale Amount,<MISSING>,1086.81
+TXN5054,modified,Quantity Sold,14.0,14
+TXN5055,modified,Product Category,<MISSING>,Electronics
+TXN5055,modified,Quantity Sold,1.0,1
+TXN5056,modified,Quantity Sold,7.0,7
+TXN5057,modified,Product Category,<MISSING>,Electronics
+TXN5057,modified,Quantity Sold,11.0,11
+TXN5057,modified,Sale Amount,<MISSING>,1291.4
+TXN5058,modified,Product Category,<MISSING>,Electronics
+TXN5058,modified,Quantity Sold,11.0,11
+TXN5059,modified,Product Category,<MISSING>,Electronics
+TXN5059,modified,Quantity Sold,6.0,6
+TXN5060,modified,Quantity Sold,6.0,6
+TXN5061,modified,Quantity Sold,6.0,6
+TXN5062,modified,Quantity Sold,9.0,9
+TXN5062,modified,Payment Method,credit card,Credit Card
+TXN5063,modified,Product Category,<MISSING>,Electronics
+TXN5063,modified,Quantity Sold,-2.0,6
+TXN5063,modified,Payment Method,<MISSING>,Credit Card
+TXN5064,modified,Quantity Sold,12.0,12
+TXN5064,modified,Payment Method,cash,Cash
+TXN5065,modified,Quantity Sold,11.0,11
+TXN5065,modified,Sale Amount,<MISSING>,1291.4
+TXN5065,modified,Payment Method,cash,Cash
+TXN5065,modified,Sale Date,06 Mar 2024,2024-03-06
+TXN5066,modified,Product Category,<MISSING>,Electronics
+TXN5066,modified,Quantity Sold,8.0,8
+TXN5066,modified,Payment Method,credit card,Credit Card
+TXN5067,modified,Quantity Sold,-10.0,6
+TXN5067,modified,Payment Method,credit card,Credit Card
+TXN5068,modified,Quantity Sold,4.0,4
+TXN5069,modified,Quantity Sold,7.0,7
+TXN5069,modified,Sale Date,2024/04/02,2024-04-02
+TXN5070,modified,Quantity Sold,-2.0,9
+TXN5071,modified,Quantity Sold,3.0,3
+TXN5071,modified,Payment Method,<MISSING>,Credit Card
+TXN5072,modified,Quantity Sold,11.0,11
+TXN5072,modified,Sale Date,04-22-2024,2024-04-22
+TXN5073,modified,Quantity Sold,5.0,5
+TXN5074,modified,Quantity Sold,3.0,3
+TXN5075,modified,Product Category,<MISSING>,Electronics
+TXN5075,modified,Quantity Sold,8.0,8
+TXN5075,modified,Payment Method,cash,Cash
+TXN5076,modified,Quantity Sold,4.0,4
+TXN5076,modified,Payment Method,<MISSING>,Credit Card
+TXN5076,modified,Sale Date,2024/05/18,2024-05-18
+TXN5077,modified,Quantity Sold,12.0,12
+TXN5077,modified,Payment Method,cash,Cash
+TXN5077,modified,Sale Date,2024/05/25,2024-05-25
+TXN5078,modified,Quantity Sold,7.0,7
+TXN5078,modified,Sale Amount,<MISSING>,882.39
+TXN5078,modified,Payment Method,cash,Cash
+TXN5079,modified,Quantity Sold,-1.0,10
+TXN5080,modified,Quantity Sold,4.0,4
+TXN5081,modified,Product Category,<MISSING>,Electronics
+TXN5081,modified,Quantity Sold,7.0,7
+TXN5081,modified,Payment Method,credit card,Credit Card
+TXN5082,modified,Quantity Sold,14.0,14
+TXN5082,modified,Payment Method,cash,Cash
+TXN5082,modified,Sale Date,27/06/2024,2024-06-27
+TXN5083,modified,Product Category,<MISSING>,Electronics
+TXN5083,modified,Quantity Sold,13.0,13
+TXN5083,modified,Sale Amount,<MISSING>,1213.8
+TXN5084,modified,Quantity Sold,8.0,8
+TXN5084,modified,Sale Amount,<MISSING>,1254.85
+TXN5085,modified,Product Category,<MISSING>,Electronics
+TXN5085,modified,Quantity Sold,5.0,5
+TXN5086,modified,Product Category,<MISSING>,Electronics
+TXN5086,modified,Quantity Sold,6.0,6
+TXN5087,modified,Quantity Sold,4.0,4
+TXN5088,modified,Quantity Sold,6.0,6
+TXN5088,modified,Payment Method,credit card,Credit Card
+TXN5089,modified,Quantity Sold,-10.0,5
+TXN5090,modified,Quantity Sold,9.0,9
+TXN5091,modified,Quantity Sold,4.0,4
+TXN5091,modified,Payment Method,credit card,Credit Card
+TXN5092,modified,Quantity Sold,6.0,6
+TXN5092,modified,Sale Amount,<MISSING>,1018.98
+TXN5092,modified,Payment Method,<MISSING>,Credit Card
+TXN5093,modified,Quantity Sold,-1.0,5
+TXN5093,modified,Payment Method,credit card,Credit Card
+TXN5093,modified,Sale Date,2024.09.08,2024-09-08
+TXN5094,modified,Quantity Sold,11.0,11
+TXN5094,modified,Payment Method,credit card,Credit Card
+TXN5094,modified,Sale Date,15/09/2024,2024-09-15
+TXN5095,modified,Quantity Sold,2.0,2
+TXN5095,modified,Sale Amount,<MISSING>,1095.09
+TXN5095,modified,Payment Method,credit card,Credit Card
+TXN5095,modified,Sale Date,09-21-2024,2024-09-21
+TXN5096,modified,Product Category,<MISSING>,Electronics
+TXN5096,modified,Quantity Sold,7.0,7
+TXN5096,modified,Sale Date,09-28-2024,2024-09-28
+TXN5097,modified,Quantity Sold,-1.0,7
+TXN5097,modified,Sale Amount,<MISSING>,1282.71
+TXN5098,modified,Quantity Sold,1.0,1
+TXN5098,modified,Sale Amount,<MISSING>,1225.65
+TXN5098,modified,Payment Method,<MISSING>,Credit Card
+TXN5098,modified,Sale Date,2024/10/11,2024-10-11
+TXN5099,modified,Quantity Sold,13.0,13
+TXN5099,modified,Payment Method,cash,Cash
+TXN5100,modified,Product Category,<MISSING>,Electronics
+TXN5100,modified,Quantity Sold,14.0,14
+TXN5100,modified,Sale Date,2024.10.25,2024-10-25
+TXN5101,modified,Quantity Sold,8.0,8
+TXN5101,modified,Sale Date,2024/10/31,2024-10-31
+TXN5102,modified,Product Category,<MISSING>,Electronics
+TXN5102,modified,Quantity Sold,13.0,13
+TXN5102,modified,Sale Date,07 Nov 2024,2024-11-07
+TXN5103,modified,Quantity Sold,12.0,12
+TXN5104,modified,Quantity Sold,2.0,2
+TXN5104,modified,Payment Method,cash,Cash
+TXN5105,modified,Product Category,<MISSING>,Electronics
+TXN5105,modified,Quantity Sold,4.0,4
+TXN5106,modified,Quantity Sold,2.0,2
+TXN5107,modified,Quantity Sold,6.0,6
+TXN5107,modified,Payment Method,credit card,Credit Card
+TXN5108,modified,Quantity Sold,14.0,14
+TXN5109,modified,Quantity Sold,9.0,9
+TXN5109,modified,Payment Method,credit card,Credit Card
+TXN5110,modified,Quantity Sold,1.0,1
+TXN5111,modified,Product Category,<MISSING>,Electronics
+TXN5111,modified,Quantity Sold,4.0,4
+TXN5112,modified,Quantity Sold,7.0,7
+TXN5112,modified,Payment Method,credit card,Credit Card
+TXN5112,modified,Sale Date,12 Jan 2025,2025-01-12
+TXN5113,modified,Quantity Sold,10.0,10
+TXN5113,modified,Payment Method,cash,Cash
+TXN5114,modified,Quantity Sold,5.0,5
+TXN5115,modified,Quantity Sold,7.0,7
+TXN5115,modified,Payment Method,credit card,Credit Card
+TXN5116,modified,Quantity Sold,13.0,13
+TXN5117,modified,Quantity Sold,12.0,12
+TXN5118,modified,Quantity Sold,8.0,8
+TXN5119,modified,Quantity Sold,10.0,10
+TXN5119,modified,Payment Method,cash,Cash
+TXN5119,modified,Sale Date,2025/02/28,2025-02-28

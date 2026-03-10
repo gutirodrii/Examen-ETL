@@ -1,0 +1,121 @@
+Transaction ID,Product Category,Quantity Sold,Sale Amount,Payment Method,Sale Date
+TXN5000,Electronics,5,786.02,Credit Card,2023-01-01
+TXN5001,Clothing,1,619.84,Mobile Pay,2023-01-07
+TXN5002,Electronics,2,1476.44,Debit Card,2023-01-14
+TXN5003,Furniture,6,624.68,Cash,2023-01-20
+TXN5004,Electronics,11,1873.21,Cash,2023-01-27
+TXN5005,Clothing,1,1804.56,Mobile Pay,2023-02-03
+TXN5006,Beauty,4,1742.72,Cash,2023-02-09
+TXN5007,Electronics,2,270.32,Cash,2023-02-16
+TXN5008,Electronics,12,2359.95,Cash,2023-02-23
+TXN5009,Groceries,12,1108.22,Credit Card,2023-03-01
+TXN5010,Sports,3,2250.69,Mobile Pay,2023-03-08
+TXN5011,Electronics,5,508.47,Credit Card,2023-03-14
+TXN5012,Sports,5,1492.21,Credit Card,2023-03-21
+TXN5013,Electronics,4,2414.04,Mobile Pay,2023-03-28
+TXN5014,Electronics,3,2496.77,Credit Card,2023-04-03
+TXN5015,Electronics,12,75.06,Credit Card,2023-04-10
+TXN5016,Sports,12,1211.04,Cash,2023-04-17
+TXN5017,Clothing,10,1086.81,Credit Card,2023-04-23
+TXN5018,Sports,2,173.35,Mobile Pay,2023-04-30
+TXN5019,Sports,3,1430.52,Credit Card,2023-05-06
+TXN5020,Electronics,12,27.63,Cash,2023-05-13
+TXN5021,Electronics,3,1534.02,Cash,2023-05-20
+TXN5022,Furniture,10,2177.4,Debit Card,2023-05-26
+TXN5023,Electronics,6,2210.75,Credit Card,2023-06-02
+TXN5024,Electronics,5,2386.48,Credit Card,2023-06-09
+TXN5025,Electronics,5,1853.56,Cash,2023-06-15
+TXN5026,Groceries,1,474.01,Cash,2023-06-22
+TXN5027,Electronics,6,1095.18,Cash,2023-06-29
+TXN5028,Electronics,13,2216.46,Credit Card,2023-07-05
+TXN5029,Furniture,9,648.79,Credit Card,2023-07-12
+TXN5030,Sports,6,1116.63,Debit Card,2023-07-18
+TXN5031,Groceries,1,1548.09,Credit Card,2023-07-25
+TXN5032,Furniture,11,271.83,Credit Card,2023-08-01
+TXN5033,Groceries,13,1232.92,Mobile Pay,2023-08-07
+TXN5034,Sports,1,126.09,Mobile Pay,2023-08-14
+TXN5035,Sports,10,789.39,Credit Card,2023-08-21
+TXN5036,Clothing,3,1883.82,Mobile Pay,2023-08-27
+TXN5037,Sports,1,1793.02,Credit Card,2023-09-03
+TXN5038,Furniture,8,2354.76,Cash,2023-09-09
+TXN5039,Groceries,9,1945.58,Credit Card,2023-09-16
+TXN5040,Electronics,9,958.94,Cash,2023-09-23
+TXN5041,Electronics,13,2263.85,Credit Card,2023-09-29
+TXN5042,Sports,10,1387.38,Credit Card,2023-10-06
+TXN5043,Electronics,8,1254.85,Cash,2023-10-13
+TXN5044,Furniture,7,1282.71,Cash,2023-10-19
+TXN5045,Electronics,5,2074.97,Credit Card,2023-10-26
+TXN5046,Furniture,9,994.58,Credit Card,2023-11-01
+TXN5047,Clothing,6,1501.5,Cash,2023-11-08
+TXN5048,Clothing,1,1090.25,Credit Card,2023-11-15
+TXN5049,Electronics,4,1739.96,Credit Card,2023-11-21
+TXN5050,Electronics,3,1219.45,Credit Card,2023-11-28
+TXN5051,Electronics,10,333.73,Credit Card,2023-12-05
+TXN5052,Electronics,12,1616.26,Credit Card,2023-12-11
+TXN5053,Sports,10,1086.81,Debit Card,2023-12-18
+TXN5054,Beauty,14,1866.22,Debit Card,2023-12-25
+TXN5055,Electronics,1,277.46,Debit Card,2023-12-31
+TXN5056,Beauty,7,33.16,Debit Card,2024-01-07
+TXN5057,Electronics,11,1291.4,Debit Card,2024-01-13
+TXN5058,Electronics,11,2423.6,Credit Card,2024-01-20
+TXN5059,Electronics,6,1756.92,Debit Card,2024-01-27
+TXN5060,Groceries,6,1043.01,Cash,2024-02-02
+TXN5061,Beauty,6,315.07,Cash,2024-02-09
+TXN5062,Beauty,9,165.0,Credit Card,2024-02-16
+TXN5063,Electronics,6,1819.64,Credit Card,2024-02-22
+TXN5064,Clothing,12,2265.05,Cash,2024-02-29
+TXN5065,Sports,11,1291.4,Cash,2024-03-06
+TXN5066,Electronics,8,1466.59,Credit Card,2024-03-13
+TXN5067,Beauty,6,1825.58,Credit Card,2024-03-20
+TXN5068,Groceries,4,741.11,Credit Card,2024-03-26
+TXN5069,Furniture,7,1314.15,Credit Card,2024-04-02
+TXN5070,Furniture,9,2039.91,Mobile Pay,2024-04-09
+TXN5071,Electronics,3,1496.87,Credit Card,2024-04-15
+TXN5072,Clothing,11,955.71,Credit Card,2024-04-22
+TXN5073,Electronics,5,207.73,Debit Card,2024-04-29
+TXN5074,Sports,3,1224.96,Debit Card,2024-05-05
+TXN5075,Electronics,8,1178.46,Cash,2024-05-12
+TXN5076,Clothing,4,466.11,Credit Card,2024-05-18
+TXN5077,Beauty,12,189.29,Cash,2024-05-25
+TXN5078,Furniture,7,882.39,Cash,2024-06-01
+TXN5079,Beauty,10,839.65,Credit Card,2024-06-07
+TXN5080,Sports,4,548.03,Credit Card,2024-06-14
+TXN5081,Electronics,7,250.22,Credit Card,2024-06-21
+TXN5082,Sports,14,2097.26,Cash,2024-06-27
+TXN5083,Electronics,13,1213.8,Credit Card,2024-07-04
+TXN5084,Electronics,8,1254.85,Cash,2024-07-10
+TXN5085,Electronics,5,79.52,Cash,2024-07-17
+TXN5086,Electronics,6,20.57,Cash,2024-07-24
+TXN5087,Beauty,4,2312.18,Debit Card,2024-07-30
+TXN5088,Clothing,6,1689.72,Credit Card,2024-08-06
+TXN5089,Beauty,5,2487.11,Debit Card,2024-08-13
+TXN5090,Groceries,9,1206.57,Debit Card,2024-08-19
+TXN5091,Electronics,4,410.46,Credit Card,2024-08-26
+TXN5092,Groceries,6,1018.98,Credit Card,2024-09-01
+TXN5093,Groceries,5,427.68,Credit Card,2024-09-08
+TXN5094,Sports,11,932.67,Credit Card,2024-09-15
+TXN5095,Electronics,2,1095.09,Credit Card,2024-09-21
+TXN5096,Electronics,7,217.88,Credit Card,2024-09-28
+TXN5097,Furniture,7,1282.71,Credit Card,2024-10-05
+TXN5098,Beauty,1,1225.65,Credit Card,2024-10-11
+TXN5099,Electronics,13,808.72,Cash,2024-10-18
+TXN5100,Electronics,14,2407.2,Mobile Pay,2024-10-25
+TXN5101,Beauty,8,2493.47,Cash,2024-10-31
+TXN5102,Electronics,13,1222.75,Mobile Pay,2024-11-07
+TXN5103,Sports,12,813.41,Credit Card,2024-11-13
+TXN5104,Clothing,2,2434.0,Cash,2024-11-20
+TXN5105,Electronics,4,2496.82,Mobile Pay,2024-11-27
+TXN5106,Beauty,2,1121.35,Cash,2024-12-03
+TXN5107,Sports,6,126.19,Credit Card,2024-12-10
+TXN5108,Groceries,14,1125.95,Cash,2024-12-17
+TXN5109,Groceries,9,1779.78,Credit Card,2024-12-23
+TXN5110,Sports,1,1570.79,Credit Card,2024-12-30
+TXN5111,Electronics,4,1681.56,Mobile Pay,2025-01-05
+TXN5112,Furniture,7,2430.22,Credit Card,2025-01-12
+TXN5113,Electronics,10,1660.0,Cash,2025-01-19
+TXN5114,Electronics,5,242.25,Mobile Pay,2025-01-25
+TXN5115,Electronics,7,1480.48,Credit Card,2025-02-01
+TXN5116,Furniture,13,540.78,Cash,2025-02-08
+TXN5117,Beauty,12,1990.76,Debit Card,2025-02-14
+TXN5118,Electronics,8,885.51,Mobile Pay,2025-02-21
+TXN5119,Clothing,10,1263.55,Cash,2025-02-28

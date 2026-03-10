@@ -1,0 +1,95 @@
+Employee Information
+====================
+Shape: 100 rows x 8 columns
+
+Columns and data types:
+Employee ID           object
+Name                  object
+Department            object
+Date of Birth         object
+Gender                object
+Salary               float64
+Date of Joining       object
+Performance Score    float64
+
+Missing values by column:
+                   missing_count  missing_percent
+Employee ID                    0              0.0
+Name                          25             25.0
+Department                    30             30.0
+Date of Birth                 25             25.0
+Gender                        30             30.0
+Salary                        14             14.0
+Date of Joining               15             15.0
+Performance Score             25             25.0
+
+Duplicate rows: 0
+
+Numeric summary:
+                   count       mean         std      min      25%      50%       75%        max
+Salary              86.0  238007.28  1127893.76 -42000.0  41087.5  76769.5  99751.75  9999999.0
+Performance Score   75.0       2.87        1.52      1.0      1.0      3.0      4.00        5.0
+
+Categorical summary:
+                count unique            top freq
+Employee ID       100    100        EMP1000    1
+Name               75     51  Diana Johnson    3
+Department         70      6        Finance   17
+Date of Birth      75     75     1970-01-01    1
+Gender             70     13              M   13
+Date of Joining    85     85     01/01/2010    1
+
+Invalid salary rows (negative, zero, or unrealistic > 500000):
+12
+
+Date of Birth parsing failures: 49
+Date of Joining parsing failures: 82
+
+Observed gender values:
+ woman, F, Fem, Fem., Female, M, Male, NonBinary, Unknown, X, fem, female, male
+
+Inconsistent gender values:
+ woman, Fem, Fem., NonBinary, Unknown, X, fem
+
+
+Sales Data
+==========
+Shape: 120 rows x 6 columns
+
+Columns and data types:
+Transaction ID       object
+Product Category     object
+Quantity Sold       float64
+Sale Amount         float64
+Payment Method       object
+Sale Date            object
+
+Missing values by column:
+                  missing_count  missing_percent
+Transaction ID                0              0.0
+Product Category             30             25.0
+Quantity Sold                 0              0.0
+Sale Amount                  15             12.5
+Payment Method               12             10.0
+Sale Date                     0              0.0
+
+Duplicate rows: 0
+
+Numeric summary:
+               count     mean     std    min     25%      50%      75%      max
+Quantity Sold  120.0     5.68    5.57 -10.00    2.75     6.00    10.00    14.00
+Sale Amount    105.0  1282.71  764.85  20.57  619.84  1263.55  1866.22  2496.82
+
+Categorical summary:
+                 count unique          top freq
+Transaction ID     120    120      TXN5000    1
+Product Category    90      6  Electronics   20
+Payment Method     108      6  Credit Card   22
+Sale Date          120    120   2023/01/01    1
+
+Negative Quantity Sold rows: 14
+Negative Sale Amount rows: 0
+Sale Date parsing failures: 114
+
+Observed payment method values:
+Cash, Credit Card, Debit Card, Mobile Pay, cash , credit card
