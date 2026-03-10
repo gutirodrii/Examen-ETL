@@ -15,9 +15,46 @@ def load_csv(name: str) -> pd.DataFrame:
     return pd.read_csv(BASE_DIR / name)
 
 
-@st.cache_data
-def load_text(name: str) -> str:
-    return (BASE_DIR / name).read_text(encoding="utf-8")
+def build_dataset_profile(name: str, df: pd.DataFrame) -> str:
+    lines: list[str] = []
+    lines.append(name)
+    lines.append("=" * len(name))
+    lines.append(f"Shape: {df.shape[0]} rows x {df.shape[1]} columns")
+    lines.append("")
+    lines.append("Columns and data types:")
+    lines.append(df.dtypes.to_string())
+    lines.append("")
+    lines.append("Missing values by column:")
+    lines.append(
+        pd.DataFrame(
+            {
+                "missing_count": df.isna().sum(),
+                "missing_percent": (df.isna().mean() * 100).round(2),
+            }
+        ).to_string()
+    )
+    lines.append("")
+    lines.append(f"Duplicate rows: {int(df.duplicated().sum())}")
+    lines.append("")
+
+    numeric_summary = df.describe(include="number").transpose()
+    if not numeric_summary.empty:
+        lines.append("Numeric summary:")
+        lines.append(numeric_summary.round(2).to_string())
+        lines.append("")
+
+    if name == "Employee Information":
+        salary = pd.to_numeric(df["Salary"], errors="coerce")
+        invalid_salaries = int(((salary < 0) | (salary > 500000) | (salary == 0)).sum())
+        lines.append(f"Invalid salary rows: {invalid_salaries}")
+        lines.append("")
+
+    if name == "Sales Data":
+        quantity = pd.to_numeric(df["Quantity Sold"], errors="coerce")
+        lines.append(f"Negative Quantity Sold rows: {int((quantity < 0).sum())}")
+        lines.append("")
+
+    return "\n".join(lines)
 
 
 def build_filtered_dataset(df: pd.DataFrame) -> pd.DataFrame:
@@ -25,7 +62,6 @@ def build_filtered_dataset(df: pd.DataFrame) -> pd.DataFrame:
     filtered["Sale Date"] = pd.to_datetime(filtered["Sale Date"], errors="coerce")
 
     st.sidebar.header("Filtros")
-
     departments = sorted(filtered["Department"].dropna().unique().tolist())
     categories = sorted(filtered["Product Category"].dropna().unique().tolist())
     payment_methods = sorted(filtered["Payment Method"].dropna().unique().tolist())
@@ -52,11 +88,16 @@ def build_filtered_dataset(df: pd.DataFrame) -> pd.DataFrame:
         & filtered["Product Category"].isin(selected_categories)
         & filtered["Payment Method"].isin(selected_payment_methods)
     ]
-
     return filtered
 
 
-def render_overview(filtered_df: pd.DataFrame, employee_dirty: pd.DataFrame, sales_dirty: pd.DataFrame) -> None:
+def render_overview(
+    filtered_df: pd.DataFrame,
+    employee_dirty: pd.DataFrame,
+    sales_dirty: pd.DataFrame,
+    employee_cdc: pd.DataFrame,
+    sales_cdc: pd.DataFrame,
+) -> None:
     st.subheader("Resumen Ejecutivo")
 
     col1, col2, col3, col4 = st.columns(4)
@@ -68,48 +109,71 @@ def render_overview(filtered_df: pd.DataFrame, employee_dirty: pd.DataFrame, sal
     col5, col6, col7, col8 = st.columns(4)
     col5.metric("Employee Rows Lost if Drop Nulls", f"{len(employee_dirty) - len(employee_dirty.dropna()):,}")
     col6.metric("Sales Rows Lost if Drop Nulls", f"{len(sales_dirty) - len(sales_dirty.dropna()):,}")
-    col7.metric("Modified Employee Records", "99")
-    col8.metric("Modified Sales Records", "120")
-
-    st.markdown(
-        """
-        Esta dashboard consolida todo el flujo del proyecto:
-        generación de datos sintéticos con errores, profiling, limpieza, merge, CDC y análisis de negocio.
-        """
+    col7.metric(
+        "Modified Employee Records",
+        f"{employee_cdc.loc[employee_cdc['change_type'].eq('modified'), 'record_key'].nunique():,}",
+    )
+    col8.metric(
+        "Modified Sales Records",
+        f"{sales_cdc.loc[sales_cdc['change_type'].eq('modified'), 'record_key'].nunique():,}",
     )
 
 
-def render_profiling() -> None:
+def render_profiling(employee_dirty: pd.DataFrame, sales_dirty: pd.DataFrame) -> None:
     st.subheader("Data Profiling")
-
-    st.text_area(
-        "Reporte de profiling",
-        load_text("data_profiling_report.txt"),
-        height=420,
-    )
 
     col1, col2 = st.columns(2)
     with col1:
-        st.image(str(BASE_DIR / "employee_missing_heatmap.png"), caption="Missing Values Heatmap: Employee Information")
+        st.text_area("Employee profiling", build_dataset_profile("Employee Information", employee_dirty), height=420)
     with col2:
-        st.image(str(BASE_DIR / "sales_missing_heatmap.png"), caption="Missing Values Heatmap: Sales Data")
+        st.text_area("Sales profiling", build_dataset_profile("Sales Data", sales_dirty), height=420)
+
+    heatmap_employee = px.imshow(
+        employee_dirty.isna().astype(int),
+        aspect="auto",
+        color_continuous_scale="Viridis",
+        title="Employee Missing Values Heatmap",
+    )
+    heatmap_sales = px.imshow(
+        sales_dirty.isna().astype(int),
+        aspect="auto",
+        color_continuous_scale="Viridis",
+        title="Sales Missing Values Heatmap",
+    )
+
+    col3, col4 = st.columns(2)
+    with col3:
+        st.plotly_chart(heatmap_employee, use_container_width=True)
+    with col4:
+        st.plotly_chart(heatmap_sales, use_container_width=True)
 
 
 def render_cleaning(employee_clean: pd.DataFrame, sales_clean: pd.DataFrame) -> None:
     st.subheader("Data Cleaning")
 
-    st.text_area(
-        "Reporte de limpieza",
-        load_text("data_cleaning_report.txt"),
-        height=260,
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric("Employee missing after cleaning", int(employee_clean.isna().sum().sum()))
+    col2.metric("Sales missing after cleaning", int(sales_clean.isna().sum().sum()))
+    col3.metric(
+        "Invalid salary after cleaning",
+        int(
+            (
+                (pd.to_numeric(employee_clean["Salary"], errors="coerce") <= 0)
+                | (pd.to_numeric(employee_clean["Salary"], errors="coerce") > 500000)
+            ).sum()
+        ),
+    )
+    col4.metric(
+        "Negative quantity after cleaning",
+        int((pd.to_numeric(sales_clean["Quantity Sold"], errors="coerce") < 0).sum()),
     )
 
     left, right = st.columns(2)
     with left:
-        st.markdown("**Employee Cleaned Preview**")
+        st.markdown("**cleaned_employee_data.csv**")
         st.dataframe(employee_clean.head(15), use_container_width=True)
     with right:
-        st.markdown("**Sales Cleaned Preview**")
+        st.markdown("**cleaned_sales_data.csv**")
         st.dataframe(sales_clean.head(15), use_container_width=True)
 
 
@@ -121,8 +185,15 @@ def render_merge_and_cdc(merged_df: pd.DataFrame, employee_cdc: pd.DataFrame, sa
     col2.metric("Merged Columns", f"{merged_df.shape[1]:,}")
     col3.metric("Remaining Nulls", f"{int(merged_df.isna().sum().sum()):,}")
 
-    st.text_area("Reporte de merge", load_text("data_merge_report.txt"), height=180)
-    st.text_area("Reporte CDC", load_text("cdc_report.txt"), height=220)
+    col4, col5, col6 = st.columns(3)
+    col4.metric("Employee CDC New", int((employee_cdc["change_type"] == "added").sum()))
+    col5.metric("Employee CDC Deleted", int((employee_cdc["change_type"] == "deleted").sum()))
+    col6.metric("Employee CDC Modified", employee_cdc.loc[employee_cdc["change_type"].eq("modified"), "record_key"].nunique())
+
+    col7, col8, col9 = st.columns(3)
+    col7.metric("Sales CDC New", int((sales_cdc["change_type"] == "added").sum()))
+    col8.metric("Sales CDC Deleted", int((sales_cdc["change_type"] == "deleted").sum()))
+    col9.metric("Sales CDC Modified", sales_cdc.loc[sales_cdc["change_type"].eq("modified"), "record_key"].nunique())
 
     tab1, tab2 = st.tabs(["Employee CDC", "Sales CDC"])
     with tab1:
@@ -155,6 +226,8 @@ def render_bi(filtered_df: pd.DataFrame) -> None:
         .copy()
     )
 
+    salary_corr = float(employee_points["Salary"].corr(employee_points["Performance Score"]))
+
     fig_department_total = px.bar(
         department_summary,
         x="Department",
@@ -182,7 +255,7 @@ def render_bi(filtered_df: pd.DataFrame) -> None:
         y="Performance Score",
         color="Department",
         hover_data=["Employee ID"],
-        title="Salary vs. Performance",
+        title=f"Salary vs. Performance (corr={salary_corr:.3f})",
         trendline="ols",
     )
     fig_payment_total = px.bar(
@@ -212,10 +285,18 @@ def render_bi(filtered_df: pd.DataFrame) -> None:
     st.plotly_chart(fig_payment_total, use_container_width=True)
     st.plotly_chart(fig_payment_avg, use_container_width=True)
 
-    st.text_area(
-        "Reporte BI",
-        load_text("business_intelligence_report.txt"),
-        height=320,
+    top_department = department_summary.iloc[0]
+    top_category = category_summary.iloc[0]
+    top_payment = payment_summary.iloc[0]
+    st.markdown(
+        f"""
+        **Insights actuales**
+
+        - Highest total sales department: `{top_department['Department']}` with `{top_department['total_sales']:.2f}`
+        - Top product category: `{top_category['Product Category']}` with `{top_category['Sale Amount']:.2f}`
+        - Payment method with highest total sales: `{top_payment['Payment Method']}` with `{top_payment['total_sales']:.2f}`
+        - Salary vs Performance correlation: `{salary_corr:.3f}`
+        """
     )
 
 
@@ -223,18 +304,14 @@ def render_downloads() -> None:
     st.subheader("Descargas")
 
     files = [
+        "exam.ipynb",
         "employee_information_dirty.csv",
         "sales_data_dirty.csv",
-        "employee_information_cleaned.csv",
-        "sales_data_cleaned.csv",
-        "employee_sales_merged.csv",
+        "cleaned_employee_data.csv",
+        "cleaned_sales_data.csv",
+        "merged_analysis_data.csv",
         "employee_cdc_changes.csv",
         "sales_cdc_changes.csv",
-        "data_profiling_report.txt",
-        "data_cleaning_report.txt",
-        "data_merge_report.txt",
-        "cdc_report.txt",
-        "business_intelligence_report.txt",
     ]
 
     for file_name in files:
@@ -248,20 +325,16 @@ def render_downloads() -> None:
 
 
 def main() -> None:
-    st.set_page_config(
-        page_title="ETL Project Dashboard",
-        page_icon="📊",
-        layout="wide",
-    )
+    st.set_page_config(page_title="ETL Project Dashboard", page_icon="📊", layout="wide")
 
     st.title("ETL Project Dashboard")
-    st.caption("Synthetic Data Generation, Cleaning, CDC and Business Intelligence")
+    st.caption("Notebook-driven ETL workflow with profiling, cleaning, CDC, and BI")
 
     employee_dirty = load_csv("employee_information_dirty.csv")
     sales_dirty = load_csv("sales_data_dirty.csv")
-    employee_clean = load_csv("employee_information_cleaned.csv")
-    sales_clean = load_csv("sales_data_cleaned.csv")
-    merged_df = load_csv("employee_sales_merged.csv")
+    employee_clean = load_csv("cleaned_employee_data.csv")
+    sales_clean = load_csv("cleaned_sales_data.csv")
+    merged_df = load_csv("merged_analysis_data.csv")
     employee_cdc = load_csv("employee_cdc_changes.csv")
     sales_cdc = load_csv("sales_cdc_changes.csv")
 
@@ -272,9 +345,9 @@ def main() -> None:
     )
 
     with overview_tab:
-        render_overview(filtered_df, employee_dirty, sales_dirty)
+        render_overview(filtered_df, employee_dirty, sales_dirty, employee_cdc, sales_cdc)
     with profiling_tab:
-        render_profiling()
+        render_profiling(employee_dirty, sales_dirty)
     with cleaning_tab:
         render_cleaning(employee_clean, sales_clean)
     with merge_tab:
